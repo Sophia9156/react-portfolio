@@ -1,0 +1,116 @@
+@import '../../common';
+
+// animation
+@keyframes fade {
+  0%{opacity: 0;}
+  10%{opacity: 1;}
+  90%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+@keyframes wave {
+  0%{transform: translate(0, 0) rotate(0);}
+  10%{transform: scale(100%) translate(-10vw, -10vw) rotate(10deg);}
+  20%{transform: scale(80%) translate(-20vw, -20vw) rotate(30deg);}
+  30%{transform: scale(100%) translate(0, 0) rotate(10deg);}
+  40%{transform: scale(80%) translate(10vw, 10vw) rotate(-10deg);}
+  50%{transform: translate(15vw, 15vw) rotate(-30deg);}
+  60%{transform: translate(0vw, 0vw) rotate(-60deg);}
+  70%{transform: translate(-10vw, -10vw) rotate(-50deg);}
+  80%{transform: translate(0, 0) rotate(0);}
+  85%{transform: translate(0, 0) scale(100%);}
+  100%{transform: translate(0, -40vh) scale(0);}
+}
+
+
+// intro
+.intro{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0; top: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.box{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0; top: 0;
+  overflow: hidden;
+  .bg{
+    width: 500vw;
+    height: 500vw;
+    position: absolute;
+    left: calc(50% - 250vw); top: calc(50% - 250vw);
+    border-radius: 50%;
+    background: $blue;
+    background: linear-gradient(-45deg, $blue 40%, $red 50%, $yellow 60%);
+    animation: wave 9s forwards linear;
+  }
+  .text{
+    position: absolute;
+    width: 100%; height: 3em;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-family: $nanum;
+    color: #fff;
+    font-size: 3em;
+    opacity: 0;
+    animation: fade 1.5s forwards linear;
+  }
+  .sq1{animation-delay: 1s;}
+  .sq2{animation-delay: 3s;}
+  .sq3{animation-delay: 4.5s;}
+  .sq4{animation-delay: 6s;}
+  .skip{
+    position: absolute;
+    right: 5%;
+    bottom: 3rem;
+    padding: 15px 20px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-family: $nanum;
+    pointer-events: fill;
+    cursor: pointer;
+  }
+}
+
+
+
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) {  
+  .box{
+    .text{
+      font-size: 2em;
+    }
+  }
+}
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+  .box{
+    .text{
+      font-size: 1.5em;
+    }
+  }
+}
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+  .box{
+    .text{
+      font-size: 1em;
+    }
+    .skip{
+      font-size: 0.8rem;
+    }
+  }
+}
