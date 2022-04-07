@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './scss/textBtn.module.scss';
 
 export default function TextBtn() {
@@ -7,6 +8,7 @@ export default function TextBtn() {
     left: 0,
     top: 0
   })
+  const [isLinkOpen, setIsLinkOpen] = useState(false);
 
   useEffect(() => {
     document.addEventListener('mousemove', (e) => {
@@ -15,21 +17,27 @@ export default function TextBtn() {
       } else if(e.clientX < textBox.current.offsetLeft + 400) {
         setCirclePosition({left: textBox.current.offsetLeft - 100, top: e.clientY - 500})
       } else {
-        setCirclePosition({left: e.clientX - 500, top: e.clientY - 500})
+        setCirclePosition({left: e.clientX - 700, top: e.clientY - 400})
       }
     })
   }, [])
 
   return (
     <>
-    <section className={styles.textWrap}>
+    <section className={`${styles.textWrap} ${isLinkOpen ? styles.active : null}`}>
       <h2>
-        <span className={styles.aboutLink}>
-          <b>A</b><b>B</b><b>O</b><b>U</b><b>T</b>
+        <span>
+          <Link to="/about" className={styles.aboutLink}>
+            <b>A</b><b>B</b><b>O</b><b>U</b><b>T</b>
+          </Link>
         </span>
-        <span className={styles.clickLink}>Click here!</span>
-        <span className={styles.worksLink}>
-          <b>W</b><b>O</b><b>R</b><b>K</b><b>S</b>
+        <span 
+        className={styles.clickLink} 
+        onClick={() => setIsLinkOpen(!isLinkOpen)}>Click here!</span>
+        <span>
+          <Link to="/works" className={styles.worksLink}>
+            <b>W</b><b>O</b><b>R</b><b>K</b><b>S</b>
+          </Link>
         </span>
         <div 
         ref={textBox}
@@ -47,9 +55,12 @@ export default function TextBtn() {
       </h2>
     </section>
     <section className={styles.animationTextWrap}>
-      <p className={styles.animationEn}>Hello there!</p>
-      <p className={styles.animationKo}>안녕하세요 :)</p>
-      <p className={styles.animationJp}>こんにちは。</p>
+      <p className={styles.animationEn}
+      style={isLinkOpen ? {transform: 'translateX(200%)'} : {transform: 'translateX(-200%)'}}>Hello there!</p>
+      <p className={styles.animationKo}
+      style={isLinkOpen ? {transform: 'translateX(-200%)'} : {transform: 'translateX(200%)'}}>안녕하세요 :)</p>
+      <p className={styles.animationJp}
+      style={isLinkOpen ? {transform: 'translateX(200%)'} : {transform: 'translateX(-200%)'}}>こんにちは。</p>
     </section>
     </>
   )
