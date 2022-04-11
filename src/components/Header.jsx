@@ -16,9 +16,21 @@ export default function Header() {
       </h1>
       <nav className={`${styles.mainMenu} ${showingMainMenu ? styles.active : null}`}>
         <div className={styles.mainMenuTop}>
-          <Link to="/" className={styles.homeBtn}>HOME</Link>
-          <Link to="/about" className={styles.aboutBtn}>ABOUT</Link>
-          <Link to="/works" className={styles.worksBtn}>WORKS</Link>
+          <Link 
+          to="/" 
+          className={styles.homeBtn}
+          onClick={() => showingMainMenu(false)}
+          >HOME</Link>
+          <Link 
+          to="/about" 
+          className={styles.aboutBtn}
+          onClick={() => showingMainMenu(false)}
+          >ABOUT</Link>
+          <Link 
+          to="/works" 
+          className={styles.worksBtn}
+          onClick={() => showingMainMenu(false)}
+          >WORKS</Link>
         </div>
         <div className={styles.mainMenuBottom}>
           <a href="https://github.com/Sophia9156" target="_blank" rel="noreferrer">Github</a>
