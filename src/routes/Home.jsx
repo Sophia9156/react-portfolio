@@ -1,6 +1,7 @@
 import BgRed from "../components/BgRed";
 import Intro from "../components/Intro";
 import TextBtn from "../components/TextBtn";
+import Clock from "../components/Clock";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Intro />
       <BgRed />
       <TextBtn />
+      <Clock />
     </>
   )
 }

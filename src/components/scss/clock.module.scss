@@ -1,0 +1,87 @@
+@import '../../common';
+
+
+.clockWrap{
+  padding: 1.5em;
+  position: absolute;
+  right: 3em; bottom : 10em;
+  cursor: default;
+  p{
+    text-align: center;
+    font-family: $nanum;
+    font-weight: 600;
+    color: #fff;
+  }
+  .calendar{
+    margin-bottom: 10px;
+    .day1{
+      font-size: 0.9em;
+      vertical-align: middle;
+    }
+    .day2{
+      display: inline-block;
+      padding: 0.2em 0.5em;
+      margin-left: 10px;
+      border-radius: 0.5em;
+      font-size: 0.8em;
+      vertical-align: middle;
+    }
+  }
+  .clock{
+    font-size: 1.5em;
+  }
+}
+
+
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) {
+  .clockWrap{
+    padding: 1.5rem 0;
+    .calendar{
+      .day1{
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+  .clockWrap{
+    padding: 1.5em 0;
+    right: 2em;
+    .calendar{
+      .day1{
+        font-size: 0.8em;
+      }
+      .day2{
+        font-size: 0.7em;
+      }
+    }
+    .clock{
+      font-size: 1.2em;
+    }
+  }
+}
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+  .clockWrap{
+    padding: 1.5em 0;
+    right: 2em; bottom : 1em;
+    .calendar{
+      width: 100%;
+      .day1{
+        font-size: 0.7em;
+      }
+      .day2{
+        font-size: 0.6em;
+      }
+    }
+    .clock{
+      font-size: 1.2em;
+    }
+  }
+}
