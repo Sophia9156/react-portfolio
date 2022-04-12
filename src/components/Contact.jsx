@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './scss/contact.module.scss';
+import { Context } from '../store/store';
 
 export default function Contact() {
   const [showing, setShowing] = useState(false);
+
+  const context = useContext(Context);
 
   return (
     <div 
@@ -10,7 +13,11 @@ export default function Contact() {
     onClick={() => setShowing(!showing)}
     >
       <div className={styles.contact}>
-        <span className={`${styles.contactIcon} ${styles.materialIconsOutlined}`}>
+        <span 
+        className={`${styles.contactIcon} ${styles.materialIconsOutlined}`}
+        onMouseEnter={() => context.active = true}
+        onMouseLeave={() => context.active = false}
+        >
           contact_phone
         </span>
         <ul 

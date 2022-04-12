@@ -1,17 +1,24 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from './scss/header.module.scss';
+import { Context } from '../store/store';
 
 export default function Header() {
   const [showingSubMenu, setShowingSubMenu] = useState(false);
   const [showingMainMenu, setShowingMainMenu] = useState(false);
+
+  const context = useContext(Context);
+
   return (
     <header>
       <nav className={`${styles.subMenu} ${showingSubMenu ? styles.active : null}`}>
         <a href="https://github.com/Sophia9156" target="_blank" rel="noreferrer">Github</a>
         <a href="https://babycoder05.tistory.com/" target="_blank" rel="noreferrer">Blog</a>
       </nav>
-      <h1 onClick={() => setShowingSubMenu(!showingSubMenu)}>
+      <h1 
+      onClick={() => setShowingSubMenu(!showingSubMenu)}
+      onMouseEnter={() => context.active = true}
+      onMouseLeave={() => context.active = false}>
         <img src="./img/parrot.png" alt="logo" />
       </h1>
       <nav className={`${styles.mainMenu} ${showingMainMenu ? styles.active : null}`}>
@@ -44,7 +51,9 @@ export default function Header() {
       </div>
       <div 
       className={`${styles.burger} ${showingMainMenu ? styles.active : null}`} 
-      onClick={() => setShowingMainMenu(!showingMainMenu)}>
+      onClick={() => setShowingMainMenu(!showingMainMenu)}
+      onMouseEnter={() => context.active = true}
+      onMouseLeave={() => context.active = false}>
         <span></span>
         <span></span>
         <span></span>

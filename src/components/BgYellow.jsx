@@ -1,6 +1,6 @@
-import styles from './scss/bgRed.module.scss';
+import styles from './scss/bgYellow.module.scss';
 
-export default function BgRed() {
+export default function BgYellow() {
   return (
     <div className={styles.bgWrap}>
       <div className={styles.bg}></div>

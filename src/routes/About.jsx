@@ -1,7 +1,9 @@
-
+import BgBlue from '../components/BgBlue';
 
 export default function About() {
   return (
-    <h1>About</h1>
+    <>
+      <BgBlue />
+    </>
   )
 }

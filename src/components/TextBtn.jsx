@@ -20,7 +20,7 @@ export default function TextBtn() {
         setCirclePosition({left: e.clientX - 700, top: e.clientY - 400})
       }
     })
-  }, [])
+  }, []);
 
   return (
     <>

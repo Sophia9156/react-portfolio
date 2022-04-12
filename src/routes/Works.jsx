@@ -1,7 +1,9 @@
-
+import BgYellow from "../components/BgYellow";
 
 export default function Works() {
   return (
-    <h1>Works</h1>
+    <>
+      <BgYellow />
+    </>
   )
 }
