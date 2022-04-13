@@ -7,13 +7,13 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Intro />
       <BgRed />
       <TextBtn />
       <Clock />
-      <Title text={'Portfolio LEE SU HYUN'} />
+      <Title text={'Portfolio LEE SU HYUN'} space={'0.2em'} />
       <Contact />
-    </>
+    </main>
   )
 }
