@@ -1,8 +1,14 @@
+import { useRef } from 'react';
 import styles from './scss/profile.module.scss';
 
 export default function Profile() {
+  const profileRef = useRef();
+  console.log(profileRef);
+
   return (
-    <section className={styles.profile}>
+    <section 
+    ref={profileRef}
+    className={styles.profile}>
       <figure className={styles.profileImg}>
         <img src="./img/selfie.png" alt="profile" />
         <span className={styles.circleRed}></span>
@@ -19,7 +25,15 @@ export default function Profile() {
             </span>
           </a>
         </p>
-        <p className={styles.scrollDown}>Scroll Down</p>
+        <p 
+        className={styles.scrollDown}
+        onClick={() => {
+          window.scrollTo({
+            top: profileRef.current.offsetHeight + 300,
+            behavior: "smooth"
+          })
+        }}
+        >Scroll Down</p>
       </article>
     </section>
   )
