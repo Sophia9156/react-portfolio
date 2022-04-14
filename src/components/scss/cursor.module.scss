@@ -4,7 +4,7 @@
 .cursor{
   width: 1.5em;
   height: 1.5em;
-  position: absolute;
+  position: fixed;
   border-radius: 100%;
   background-color: $purple;
   transition: .2s;

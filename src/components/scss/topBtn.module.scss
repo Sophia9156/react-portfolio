@@ -1,0 +1,40 @@
+@import '../../common';
+
+.goToTop{
+  position: fixed;
+  right: 5%; bottom: 3rem;
+  padding: 2rem;
+  font-size: 3em;
+  color: #fff;
+  transform: translateY(3rem);
+  transition: .5s;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 10;
+}
+.goToTop.active{
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+  .goToTop{
+    right: 5%; bottom: 2rem;
+    font-size: 2em;
+    padding: 1rem;
+  }
+}
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+  .goToTop{
+    right: 5%; bottom: 2rem;
+    padding: 0.5rem;
+    font-size: 2em;
+  }
+}

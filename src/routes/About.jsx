@@ -3,6 +3,7 @@ import Title from '../components/Title';
 import Contact from "../components/Contact";
 import Profile from '../components/Profile';
 import Introduction from '../components/Introduction';
+import TopBtn from '../components/TopBtn';
 
 export default function About() {
   return (
@@ -10,6 +11,7 @@ export default function About() {
       <BgBlue />
       <Title text={'ABOUT'} space={'2em'} />
       <Contact />
+      <TopBtn />
       <Profile />
       <Introduction />
     </main>
