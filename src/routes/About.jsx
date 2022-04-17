@@ -4,6 +4,7 @@ import Contact from "../components/Contact";
 import Profile from '../components/Profile';
 import Introduction from '../components/Introduction';
 import TopBtn from '../components/TopBtn';
+import Skills from '../components/Skills';
 
 export default function About() {
   return (
@@ -14,6 +15,7 @@ export default function About() {
       <TopBtn />
       <Profile />
       <Introduction />
+      <Skills />
     </main>
   )
 }

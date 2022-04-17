@@ -24,7 +24,6 @@ export default function Cursor() {
     className={`
       ${styles.cursor} 
       ${context.active ? styles.active : null}
-      ${context.fadeout ? styles.fadeout : null}
     `}
     style={{left: position.left, top: position.top}}
     ></div>

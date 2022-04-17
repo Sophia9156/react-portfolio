@@ -5,7 +5,6 @@ export const Context = createContext();
 const Store = props => {
   const cursorState = {
     active: false,
-    fadeout: false
   };
 
   return (

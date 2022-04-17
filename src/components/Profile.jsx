@@ -3,7 +3,6 @@ import styles from './scss/profile.module.scss';
 
 export default function Profile() {
   const profileRef = useRef();
-  console.log(profileRef);
 
   return (
     <section 
